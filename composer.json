@@ -1,13 +1,13 @@
 {
     "name": "badrtairlbahrepro/cakephp-log-viewer",
-    "description": "A beautiful and feature-rich log viewer for CakePHP applications",
+    "description": "log viewer for CakePHP applications",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "plugin", "logs", "viewer", "debugging"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your.email@example.com"
+            "name": "Tairlbahre",
+            "email": "btairlbahre@gmail.com"
         }
     ],
     "require": {
