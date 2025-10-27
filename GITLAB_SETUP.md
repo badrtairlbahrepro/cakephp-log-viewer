@@ -96,24 +96,6 @@ composer install
 
 ---
 
-## 🔄 ÉTAPE 6 : Synchronisation future
-
-À chaque modification du plugin, pousser sur les deux remotes :
-
-```bash
-git add .
-git commit -m "Description des changements"
-git push origin bootstrap
-git push gitlab bootstrap
-```
-
-Ou en une seule commande :
-```bash
-git push origin bootstrap && git push gitlab bootstrap
-```
-
----
-
 ## 📝 Note sur `auth.json`
 
 Le fichier `auth.json` contient des informations sensibles (token GitLab). Il faut :
