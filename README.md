@@ -89,27 +89,17 @@ class Application extends BaseApplication
 }
 ```
 
-#### 2. Configurer les routes dans `config/routes.php`
+#### 2. Routes Chargées Automatiquement ✅
 
-Ouvrez le fichier `config/routes.php` et ajoutez les routes pour le plugin :
+✅ **Les routes sont chargées automatiquement** via le fichier `config/routes.php` du plugin.
+Aucune configuration manuelle n'est nécessaire !
 
-```php
-$routes->scope('/', function (RouteBuilder $builder): void {
-    
-    // ... vos routes existantes ...
-    
-    // Routes du plugin Log Viewer
-    $builder->scope('/logs', function (RouteBuilder $routes) {
-        $routes->connect('/', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'index']);
-        $routes->connect('/export/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'export']);
-        $routes->connect('/view/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'view']);
-        $routes->connect('/clear/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'clear']);
-        $routes->connect('/download/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'download']);
-    });
-    
-    // ... reste de vos routes ...
-});
-```
+Les URLs suivantes sont disponibles automatiquement :
+- `/logs` - Page principale du visualiseur
+- `/logs/view/*` - Visualiser un fichier de log
+- `/logs/export/*` - Exporter les logs
+- `/logs/clear/*` - Vider les logs
+- `/logs/download/*` - Télécharger un fichier de log
 
 ### Pour CakePHP 4
 
@@ -137,25 +127,17 @@ class Application extends BaseApplication
 }
 ```
 
-#### 2. Configurer les routes dans `config/routes.php`
+#### 2. Routes Chargées Automatiquement ✅
 
-```php
-$routes->scope('/', function (RouteBuilder $builder): void {
-    
-    // ... vos routes existantes ...
-    
-    // Routes du plugin Log Viewer
-    $builder->scope('/logs', function (RouteBuilder $routes) {
-        $routes->connect('/', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'index']);
-        $routes->connect('/export/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'export']);
-        $routes->connect('/view/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'view']);
-        $routes->connect('/clear/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'clear']);
-        $routes->connect('/download/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'download']);
-    });
-    
-    // ... reste de vos routes ...
-});
-```
+✅ **Les routes sont chargées automatiquement** via le fichier `config/routes.php` du plugin.
+Aucune configuration manuelle n'est nécessaire !
+
+Les URLs suivantes sont disponibles automatiquement :
+- `/logs` - Page principale du visualiseur
+- `/logs/view/*` - Visualiser un fichier de log
+- `/logs/export/*` - Exporter les logs
+- `/logs/clear/*` - Vider les logs
+- `/logs/download/*` - Télécharger un fichier de log
 
 ## 🎨 Utilisation
 
@@ -300,8 +282,8 @@ composer update badrtairlbahrepro/cakephp-log-viewer
 
 ### Erreur 404 sur `/logs`
 
-- Vérifiez que le plugin est chargé dans `Application.php`
-- Vérifiez que les routes sont correctement configurées
+- Vérifiez que le plugin est chargé dans `Application.php` avec `'routes' => true`
+- Les routes sont chargées automatiquement via `config/routes.php` du plugin
 - Vérifiez les permissions d'écriture sur le dossier `logs/`
 
 ### Les fichiers de logs n'apparaissent pas
