@@ -1,5 +1,5 @@
 {
-    "name": "dev/cakephp-log-viewer",
+    "name": "badrtairlbahrepro/cakephp-log-viewer",
     "description": "log viewer for CakePHP applications",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "plugin", "logs", "viewer", "debugging"],
