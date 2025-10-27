@@ -17,3 +17,4 @@ class Plugin extends BasePlugin
     protected ?string $name = 'LogViewer';
 }
 
+
