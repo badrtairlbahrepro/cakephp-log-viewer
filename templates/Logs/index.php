@@ -11,50 +11,48 @@ $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/
 ?>
 <style>
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    --info-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --primary-color: #2c3e50;
+    --success-color: #27ae60;
+    --info-color: #3498db;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
 }
 
 body {
-    background: linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%);
+    background: #f5f7fa;
     min-height: 100vh;
     padding: 2rem 0;
 }
 
 .log-viewer-header {
-    background: var(--primary-gradient);
+    background: var(--primary-color);
     color: white;
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .log-viewer-header h1 {
     margin: 0;
-    font-weight: 700;
-    font-size: 2.5rem;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 .log-card {
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.2s ease;
 }
 
 .log-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .log-card-header {
-    background: var(--primary-gradient);
+    background: var(--primary-color);
     color: white;
-    padding: 1.5rem;
+    padding: 1.25rem;
     border: none;
 }
 
@@ -72,39 +70,37 @@ body {
 }
 
 .badge {
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
     font-weight: 500;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 }
 
 .info-card {
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s ease;
     height: 100%;
-    overflow: hidden;
+    background: white;
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: white;
-    background: var(--info-gradient);
+    background: var(--info-color);
 }
 
 .info-icon.bg-success {
-    background: var(--success-gradient);
+    background: var(--success-color);
 }
 
 .info-content {
@@ -124,15 +120,9 @@ body {
 }
 
 .btn {
-    border-radius: 0.5rem;
-    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 code {

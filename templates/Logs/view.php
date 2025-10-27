@@ -12,80 +12,84 @@ $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/sty
 ?>
 <style>
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --danger-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --info-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-    --success-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --primary-color: #2c3e50;
+    --success-color: #27ae60;
+    --info-color: #3498db;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --dark-color: #34495e;
 }
 
 body {
-    background: linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%);
+    background: #f5f7fa;
     min-height: 100vh;
     padding: 2rem 0;
 }
 
 .log-viewer-header {
-    background: var(--primary-gradient);
+    background: var(--primary-color);
     color: white;
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
+.log-viewer-header h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
 .log-card {
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
     overflow: hidden;
 }
 
 .stat-card {
     text-align: center;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.25rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s ease;
     color: white;
-    border: none;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.stat-card.error { background: var(--danger-gradient); }
-.stat-card.warning { background: var(--warning-gradient); }
-.stat-card.info { background: var(--info-gradient); }
-.stat-card.debug { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-.stat-card.critical { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-.stat-card.success { background: var(--success-gradient); color: #333 !important; }
+.stat-card.error { background: var(--danger-color); }
+.stat-card.warning { background: var(--warning-color); }
+.stat-card.info { background: var(--info-color); }
+.stat-card.debug { background: var(--dark-color); }
+.stat-card.critical { background: #c0392b; }
+.stat-card.success { background: var(--success-color); }
 
 .stat-card h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 600;
     margin: 0;
 }
 
 .stat-card p {
     margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.9;
+    font-size: 0.875rem;
+    opacity: 0.95;
 }
 
 .search-panel {
     background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .log-entries-container {
     background: #1e1e1e;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
@@ -138,32 +142,26 @@ body {
 }
 
 .btn {
-    border-radius: 0.5rem;
-    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .badge {
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
     font-weight: 500;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 }
 
 .form-control, .form-select {
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     border: 1px solid #dee2e6;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
 }
 
 .form-control:focus, .form-select:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
 }
 
 #scrollToTop {
@@ -174,7 +172,6 @@ body {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 #resultCount {
